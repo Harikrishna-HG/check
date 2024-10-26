@@ -1,7 +1,9 @@
 version: '3.8'
 
 services:
-  frontend:
+  react-project-dev:
+    container_name: react-project-container_name
+    image: react-project-dev-image
     build:
       context: . 
       dockerfile: Dockerfile.dev  # Use the dev Dockerfile created
