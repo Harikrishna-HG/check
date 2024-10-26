@@ -1,0 +1,24 @@
+# Use a lightweight Node image that includes curl, to install Bun
+FROM node:20-buster AS development
+
+# Install Bun
+RUN curl -fsSL https://bun.sh/install | bash
+ENV PATH="/root/.bun/bin:$PATH"
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy package.json and bun.lockb (Bun’s lockfile) into the container
+COPY package.json bun.lockb ./
+
+# Install dependencies using Bun
+RUN bun install
+
+# Copy all files into the container
+COPY . .
+
+# Expose the port Vite will run on
+EXPOSE 5173
+
+# Run the development server
+CMD ["bun", "run", "dev"]

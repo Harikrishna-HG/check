@@ -1,0 +1,29 @@
+# Ignore node modules and Bun cache
+node_modules
+.bun
+README.md
+
+# Ignore Bun's lockfile if not needed (if dependencies are already locked in)
+# Uncomment the line below if bun.lockb should be excluded
+# bun.lockb
+
+# Ignore local environment files
+.env
+.env.local
+
+# Ignore logs and temporary files
+npm-debug.log
+yarn-error.log
+bun-debug.log
+*.log
+.DS_Store
+
+# Ignore build outputs (if any are generated locally)
+dist
+out
+
+# Ignore IDE and editor config files
+.vscode
+.idea
+*.swp
+*.swo
